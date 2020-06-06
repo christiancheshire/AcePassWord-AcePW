@@ -1,2 +1,8 @@
 # AcePassWord-AcePW
-Password Manager Application for ICS 427
+Password manager application project developed for ICS 427
+
+Copyright 2020
+
+3 Musketeers Tech 
+
+(Michael Arcangel, Caleb Cheshire, Christian Cheshire)
