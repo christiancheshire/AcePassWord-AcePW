@@ -34,6 +34,7 @@ public class AppGUI extends JFrame {
 	private JMenuItem vAll, vHidePasswords;
 	private JMenuItem hAcePWHelp, hContactUs;
 
+	// Main GUI
 	public AppGUI() {
 		setTitle("AcePW - Ace Password");
 		getContentPane();
