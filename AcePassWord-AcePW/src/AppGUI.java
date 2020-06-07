@@ -1,10 +1,13 @@
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.util.Scanner;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JList;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -34,6 +37,11 @@ public class AppGUI extends JFrame {
 	private JMenuItem vAll, vHidePasswords;
 	private JMenuItem hAcePWHelp, hContactUs;
 
+	@SuppressWarnings("unused")
+	private NewEntryGUI infogui;
+	@SuppressWarnings("unused")
+	private UserHelpGUI help;
+
 	public AppGUI() {
 		setTitle("AcePW - Ace Password");
 		getContentPane();
@@ -50,6 +58,7 @@ public class AppGUI extends JFrame {
 		public AcePasswordManagerMenuBar() {
 
 			fileMenu = new JMenu("File");
+			fileMenu.setMnemonic(KeyEvent.VK_F);// key board navigation by ALT
 			fNew = new JMenuItem("New");
 			fOpen = new JMenuItem("Open");
 			fSave = new JMenuItem("Save");
@@ -63,6 +72,7 @@ public class AppGUI extends JFrame {
 			fileMenu.add(fExit);
 
 			editMenu = new JMenu("Edit");
+			editMenu.setMnemonic(KeyEvent.VK_E);
 			eCut = new JMenuItem("Cut");
 			eCopy = new JMenuItem("Copy");
 			ePaste = new JMenuItem("Paste");
@@ -74,12 +84,14 @@ public class AppGUI extends JFrame {
 			editMenu.add(eSelectAll);
 
 			viewMenu = new JMenu("View");
+			viewMenu.setMnemonic(KeyEvent.VK_V);
 			vAll = new JMenuItem("All");
 			vHidePasswords = new JMenuItem("Hide Passwords");
 			viewMenu.add(vAll);
 			viewMenu.add(vHidePasswords);
 
 			helpMenu = new JMenu("Help");
+			helpMenu.setMnemonic(KeyEvent.VK_H);
 			hAcePWHelp = new JMenuItem("AcePW Help");
 			hContactUs = new JMenuItem("Contact Us");
 			helpMenu.add(hAcePWHelp);
@@ -93,6 +105,8 @@ public class AppGUI extends JFrame {
 
 			add(AcePWMenuBar);
 
+			fNew.addActionListener(new openNew());
+			hAcePWHelp.addActionListener(new openHelpMenu());
 			fLoad.addActionListener(new loadFile());
 		}
 	}
@@ -139,14 +153,15 @@ public class AppGUI extends JFrame {
 	public void populateTable() {
 		int row = 0;
 		int col = 0;
-		String usersName = System.getProperty("user.name");
-		System.out.println("The name of the current user is " + usersName);
+		String nameOfUser = System.getProperty("user.name");
+		System.out.println("The name of the user is " + nameOfUser);
 		String entry;
 
-		File filePath = new File("/Users/" + usersName + "/Documents/AcePW Info.txt");
-		System.out.println("The file will be located in " + filePath);
+		File filePath = new File("/Users/" + nameOfUser + "/Documents/AcePW Info.txt");
+		System.out.println("The path that the file will be in is " + filePath);
 
 		try {
+			@SuppressWarnings("resource")
 			Scanner input = new Scanner(filePath);
 
 			while (input.hasNextLine()) {
@@ -161,16 +176,40 @@ public class AppGUI extends JFrame {
 					row++;
 				}
 				col++;
-				input.close();
+				
 			}
+			
 		} catch (Exception e) {
 			System.err.format("File not Found");
 		}
+		
 	}
 
+	/*
+	 * Instance of New Entry
+	 */
+	public class openNew implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			infogui = new NewEntryGUI();
+		}
+	}
+	
+	/*
+	 * Instance of Help Menu
+	 */
+	public class openHelpMenu implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			help = new UserHelpGUI();
+		}
+	}
+	
+	/*
+	 * Instance of Data Table
+	 */
 	public class loadFile implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			populateTable();
 		}
 	}
+	
 }
