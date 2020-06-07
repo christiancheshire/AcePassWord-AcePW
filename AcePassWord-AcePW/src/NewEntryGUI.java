@@ -38,7 +38,7 @@ public class NewEntryGUI {
 	private Boolean submitButtonHit = new Boolean(false);
 	private String nameOfUser = System.getProperty("user.name");
 
-	// Creates New Entry Class
+	
 	public NewEntryGUI() {
 		frame = new JFrame();
 		frame.setTitle("Enter New Information");
