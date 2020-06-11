@@ -20,12 +20,15 @@ import javax.swing.JTextArea;
 public class UserHelpGUI {
     private static final Logger LOGGER = Logger.getLogger(UserHelpGUI.class.getName());
     private JFrame frame;
+    private JPanel panel;
+    private JLabel label;
     private JTextArea textArea;
     private JScrollPane scroll;
     private JButton button;
 
     public UserHelpGUI() {
         this.frame = new JFrame("Help");
+        this.label = new JLabel("About this Program");
         this.textArea = new JTextArea(5, 20);
         this.scroll = new JScrollPane(textArea);
         this.button = new JButton("Button");
@@ -43,14 +46,8 @@ public class UserHelpGUI {
     }
 
     private void initTextArea() {
-        this.textArea.setText("User Help \n\nAcePassWord (AcePW) is a password management application.\n\n"
-        		+ "To add a new password, "
-        		+ "use the File dropdown and select New. In the new window, fill in the blank fields and click Submit."
-        		+ " The password and other information will then be saved to the password file.\n\n"
-        		+ "To view the recently added password along with all the others, go to the File dropdown and select Load."
-        		+ " This will refresh the screen and display all the passwords and information which has been saved.\n\n"
-        		+ "For additional help, visit the AcePassWord webpage on GitHub at https://github.com/christiancheshire/AcePassWord-AcePW.");
-        this.textArea.setFont(new Font("Comic Sans", Font.PLAIN, 15));
+        this.textArea.setText("Help!");
+        this.textArea.setFont(new Font("Comic Sans", Font.BOLD, 20));
         this.textArea.setWrapStyleWord(true);
         this.textArea.setLineWrap(true);
         this.textArea.setEditable(false);

@@ -20,6 +20,7 @@ import javax.swing.JTextField;
 
 public class NewEntryGUI {
 	private JFrame frame;
+	private JFrame warningFrame;
 	private JPanel panel;
 
 	private JLabel instructionsLabel;
