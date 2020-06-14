@@ -1,5 +1,7 @@
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.util.Scanner;
 
@@ -27,9 +29,11 @@ public class AppGUI extends JFrame {
 	private JTable table;
 
 	private JMenuBar AcePWMenuBar;
-	private JMenu fileMenu, helpMenu;
-	private JMenuItem fNew, fLoad;
-	private JMenuItem hAcePWHelp;
+	private JMenu fileMenu, editMenu, viewMenu, helpMenu;
+	private JMenuItem fNew, fOpen, fSave, fLoad, fExit;
+	private JMenuItem eCut, eCopy, ePaste, eSelectAll;
+	private JMenuItem vAll, vHidePasswords;
+	private JMenuItem hAcePWHelp, hContactUs;
 
 	@SuppressWarnings("unused")
 	private NewEntryGUI infogui;
@@ -52,17 +56,49 @@ public class AppGUI extends JFrame {
 		public AcePasswordManagerMenuBar() {
 
 			fileMenu = new JMenu("File");
+			fileMenu.setMnemonic(KeyEvent.VK_F);// key board navigation by ALT
 			fNew = new JMenuItem("New");
+			fOpen = new JMenuItem("Open");
+			fSave = new JMenuItem("Save");
 			fLoad = new JMenuItem("Load");
+			fExit = new JMenuItem("Exit");
 			fileMenu.add(fNew);
+			fileMenu.add(fOpen);
+			fileMenu.add(fSave);
 			fileMenu.add(fLoad);
+			fileMenu.addSeparator();
+			fileMenu.add(fExit);
+
+			editMenu = new JMenu("Edit");
+			editMenu.setMnemonic(KeyEvent.VK_E);
+			eCut = new JMenuItem("Cut");
+			eCopy = new JMenuItem("Copy");
+			ePaste = new JMenuItem("Paste");
+			eSelectAll = new JMenuItem("SelectAll");
+			editMenu.add(eCut);
+			editMenu.add(eCopy);
+			editMenu.add(ePaste);
+			editMenu.addSeparator();
+			editMenu.add(eSelectAll);
+
+			viewMenu = new JMenu("View");
+			viewMenu.setMnemonic(KeyEvent.VK_V);
+			vAll = new JMenuItem("All");
+			vHidePasswords = new JMenuItem("Hide Passwords");
+			viewMenu.add(vAll);
+			viewMenu.add(vHidePasswords);
 
 			helpMenu = new JMenu("Help");
+			helpMenu.setMnemonic(KeyEvent.VK_H);
 			hAcePWHelp = new JMenuItem("AcePW Help");
+			hContactUs = new JMenuItem("Contact Us");
 			helpMenu.add(hAcePWHelp);
+			helpMenu.add(hContactUs);
 
 			AcePWMenuBar = new JMenuBar();
 			AcePWMenuBar.add(fileMenu);
+			AcePWMenuBar.add(editMenu);
+			AcePWMenuBar.add(viewMenu);
 			AcePWMenuBar.add(helpMenu);
 
 			add(AcePWMenuBar);
