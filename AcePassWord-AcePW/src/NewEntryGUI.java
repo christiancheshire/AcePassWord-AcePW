@@ -17,6 +17,7 @@ import javax.swing.JTextField;
  * AcePW - ICS 427 Project
  */
 
+// Primary variable class
 public class NewEntryGUI {
 	private JFrame frame;
 	private JPanel panel;
