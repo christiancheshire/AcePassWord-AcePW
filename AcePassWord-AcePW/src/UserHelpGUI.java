@@ -1,4 +1,3 @@
-
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.awt.Font;
@@ -20,15 +19,12 @@ import javax.swing.JTextArea;
 public class UserHelpGUI {
     private static final Logger LOGGER = Logger.getLogger(UserHelpGUI.class.getName());
     private JFrame frame;
-    private JPanel panel;
-    private JLabel label;
     private JTextArea textArea;
     private JScrollPane scroll;
     private JButton button;
 
     public UserHelpGUI() {
         this.frame = new JFrame("Help");
-        this.label = new JLabel("About this Program");
         this.textArea = new JTextArea(5, 20);
         this.scroll = new JScrollPane(textArea);
         this.button = new JButton("Button");
@@ -46,8 +42,10 @@ public class UserHelpGUI {
     }
 
     private void initTextArea() {
-        this.textArea.setText("Help!");
-        this.textArea.setFont(new Font("Comic Sans", Font.BOLD, 20));
+        this.textArea.setText("User Help\n\n"
+        		+ "AcePassWord is a password management application. "
+        		+ "For more information, visit https://github.com/christiancheshire/AcePassWord-AcePW.");
+        this.textArea.setFont(new Font("Comic Sans", Font.PLAIN, 15));
         this.textArea.setWrapStyleWord(true);
         this.textArea.setLineWrap(true);
         this.textArea.setEditable(false);

@@ -1,4 +1,3 @@
-
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -20,7 +19,6 @@ import javax.swing.JTextField;
 
 public class NewEntryGUI {
 	private JFrame frame;
-	private JFrame warningFrame;
 	private JPanel panel;
 
 	private JLabel instructionsLabel;
@@ -35,10 +33,10 @@ public class NewEntryGUI {
 
 	private JButton submitButton;
 
+	@SuppressWarnings("deprecation")
 	private Boolean submitButtonHit = new Boolean(false);
 	private String nameOfUser = System.getProperty("user.name");
 
-	
 	public NewEntryGUI() {
 		frame = new JFrame();
 		frame.setTitle("Enter New Information");
