@@ -34,7 +34,6 @@ public class NewEntryGUI {
 
 	private JButton submitButton;
 
-	@SuppressWarnings("deprecation")
 	private Boolean submitButtonHit = new Boolean(false);
 	private String nameOfUser = System.getProperty("user.name");
 
