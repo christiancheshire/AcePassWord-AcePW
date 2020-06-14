@@ -1,4 +1,3 @@
-
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,9 +17,9 @@ import javax.swing.JTextField;
  * AcePW - ICS 427 Project
  */
 
+// Primary variable class
 public class NewEntryGUI {
 	private JFrame frame;
-	private JFrame warningFrame;
 	private JPanel panel;
 
 	private JLabel instructionsLabel;
@@ -38,7 +37,6 @@ public class NewEntryGUI {
 	private Boolean submitButtonHit = new Boolean(false);
 	private String nameOfUser = System.getProperty("user.name");
 
-	
 	public NewEntryGUI() {
 		frame = new JFrame();
 		frame.setTitle("Enter New Information");
