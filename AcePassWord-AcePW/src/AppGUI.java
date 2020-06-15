@@ -144,7 +144,6 @@ public class AppGUI extends JFrame {
 		} catch (Exception e) {
 			System.err.format("File not Found");
 		}
-		
 	}
 
 	/*
