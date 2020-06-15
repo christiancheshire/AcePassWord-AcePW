@@ -10,7 +10,5 @@ public class Main {
 	public static void main(String[] args) {
 		System.out.println("AcePW - Ace PassWord");
         AppGUI gui = new AppGUI();
-        
 	}
-	
 }
