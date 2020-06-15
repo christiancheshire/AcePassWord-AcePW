@@ -17,6 +17,11 @@ import javax.swing.JTextArea;
  * AcePW - ICS 427 Project
  */
 
+/*
+ * UserHelpGUI implements a simple GUI for user help functions
+ * Enables the user to find information about the program and the application's GitHub link.
+ */
+
 public class UserHelpGUI {
     private static final Logger LOGGER = Logger.getLogger(UserHelpGUI.class.getName());
     private JFrame frame;

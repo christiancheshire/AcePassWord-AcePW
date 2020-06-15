@@ -5,6 +5,10 @@
  * AcePW - ICS 427 Project
  */
 
+/*
+ * Main class to run instance of AppGUI
+ */
+
 public class Main {
 
 	@SuppressWarnings("unused")

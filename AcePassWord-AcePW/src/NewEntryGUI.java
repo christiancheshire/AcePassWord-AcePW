@@ -18,6 +18,10 @@ import javax.swing.JTextField;
  * AcePW - ICS 427 Project
  */
 
+/*
+ * NewEntryGUI implements a basic GUI for the user to input new passwords and usernames, along with the website for which each will be used
+ */
+
 public class NewEntryGUI {
 	private JFrame frame;
 	private JPanel panel;

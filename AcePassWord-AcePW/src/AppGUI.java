@@ -23,6 +23,7 @@ import javax.swing.table.DefaultTableModel;
 /*
  * Fixes incorporated 6-14-20 due to commit errors
  */
+
 @SuppressWarnings("serial")
 public class AppGUI extends JFrame {
 	
