@@ -173,5 +173,4 @@ public class AppGUI extends JFrame {
 			populateTable();
 		}
 	}
-	
 }
