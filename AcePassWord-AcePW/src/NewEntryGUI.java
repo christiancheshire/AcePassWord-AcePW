@@ -126,6 +126,17 @@ public class NewEntryGUI {
 	public Boolean getSubmitButtonHit() {
 		return submitButtonHit;
 	}
+	
+	Encryptor e = new Encryptor();
+	/*
+	 * Encrypts the password that the user has entered. Uses encryptor class.
+	 */
+	public String encryptPassword() {
+		String encrypted = e.encrypt(getPassword());
+		return encrypted;
+	}
+	
+	
 
 	public void writeNewEntryToFile() {
 		String operatingSystem = System.getProperty("os.name");

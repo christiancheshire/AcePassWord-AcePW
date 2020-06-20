@@ -17,13 +17,13 @@ public class Encryptor {
 	}
 	
 	/*
-	 * Decrypts the password saved in local data, given the username for
+	 * Decrypts the password saved in local data, given the website for
 	 * that particular account.
 	 */
-	public String decrypt(String username) {
+	public String decrypt(String website) {
 		String toDecrypt;
 		StrongTextEncryptor decryptor = new StrongTextEncryptor();
-		toDecrypt = decryptor.decrypt(username);
+		toDecrypt = decryptor.decrypt(website);
 		return toDecrypt;
 	}
 }
