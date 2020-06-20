@@ -19,7 +19,8 @@ import javax.swing.JTextField;
  */
 
 /*
- * NewEntryGUI implements a basic GUI for the user to input new passwords and usernames, along with the website for which each will be used
+ * NewEntryGUI implements a basic GUI for the user to input new passwords and usernames
+ * along with the website for which each will be used
  */
 
 public class NewEntryGUI {
@@ -28,19 +29,23 @@ public class NewEntryGUI {
 
 	private JLabel instructionsLabel;
 
-	private JLabel websiteLabel, websiteLabelWarning;
-	private JLabel usernameLabel, usernameLabelWarning;
-	private JLabel passwordLabel, passwordLabelWarning;
+	private JLabel websiteLabel, websiteLabelWarning;  // Label for website input field
+	private JLabel usernameLabel, usernameLabelWarning;  // Label for username input field
+	private JLabel passwordLabel, passwordLabelWarning;  // Label for password input field
 
-	private JTextField websiteTextField;
-	private JTextField usernameTextField;
-	private JTextField passwordTextField;
+	private JTextField websiteTextField;  // Website input field
+	private JTextField usernameTextField;  // Username input field
+	private JTextField passwordTextField;  // Password input field
 
-	private JButton submitButton;
+	private JButton submitButton;  // Submit button
 
-	private Boolean submitButtonHit = new Boolean(false);
+	private Boolean submitButtonHit = new Boolean(false);  
 	private String nameOfUser = System.getProperty("user.name");
 
+	/*
+	 * New Entry method 
+	 */
+	
 	public NewEntryGUI() {
 		frame = new JFrame();
 		frame.setTitle("Enter New Information");

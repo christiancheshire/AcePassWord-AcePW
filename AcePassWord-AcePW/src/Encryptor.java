@@ -1,10 +1,9 @@
 import org.jasypt.util.text.StrongTextEncryptor;
-/**
+
+/*
  * Copyright 2020
  * 3 Musketeers Tech
  * Encryptor class with imports from Jasypt 1.9.2
- * 
- *
  */
 public class Encryptor {
 	/*

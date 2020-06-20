@@ -23,12 +23,17 @@ import javax.swing.JTextArea;
  */
 
 public class UserHelpGUI {
+	
+	// Basic GUI setup items	
     private static final Logger LOGGER = Logger.getLogger(UserHelpGUI.class.getName());
     private JFrame frame;
     private JTextArea textArea;
     private JScrollPane scroll;
     private JButton button;
 
+    /*
+     * UserHelpGUI
+     */
     public UserHelpGUI() {
         this.frame = new JFrame("Help");
         this.textArea = new JTextArea(5, 20);
@@ -40,23 +45,33 @@ public class UserHelpGUI {
         this.scroll.setBounds(0, 0, 350, 370);
         this.button.addActionListener(new Action());
     }
-
+    
+    /*
+     * Method to set GUI window size
+     */
     private void initFrame() {
         this.frame.setSize(350, 370);
         this.frame.setVisible(true);
         this.frame.getContentPane();
     }
 
+    /*
+     * Method to set GUI text
+     */
     private void initTextArea() {
         this.textArea.setText("User Help\n\n"
         		+ "AcePassWord is a password management application. "
-        		+ "For more information, visit https://github.com/christiancheshire/AcePassWord-AcePW.");
+        		+ "For more information, visit https://github.com/christiancheshire/AcePassWord-AcePW. "
+        		+ "The developers of this application are: Michael Arcangel, Caleb Cheshire, and Christian Cheshire.");
         this.textArea.setFont(new Font("Comic Sans", Font.PLAIN, 15));
         this.textArea.setWrapStyleWord(true);
         this.textArea.setLineWrap(true);
         this.textArea.setEditable(false);
     }
-
+    
+    /*
+     * User actions handler
+     */
     private static class Action implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             LOGGER.log(Level.INFO, "Help Button Clicked");

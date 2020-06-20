@@ -7,6 +7,7 @@
 
 /*
  * Main class to run instance of AppGUI
+ * which in turn runs instances of NewEntryGUI and UserHelpGUI
  */
 
 public class Main {
