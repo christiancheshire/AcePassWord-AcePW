@@ -7,6 +7,7 @@ import org.jasypt.util.text.StrongTextEncryptor;
  */
 public class Encryptor {
 	StrongTextEncryptor encryptor = new StrongTextEncryptor();
+	
 	/*
 	 * Encrypts the password to be saved in local data.
 	 */

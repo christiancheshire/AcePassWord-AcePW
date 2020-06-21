@@ -164,7 +164,7 @@ public class NewEntryGUI {
 						"C:/Documents and Settings/" + nameOfUser + "/My Documents/AcePW Info.txt", true);
 				PrintWriter printOutFile = new PrintWriter(outFile);
 
-				printOutFile.printf(getWebsite() + "\n" + getUsername() + "\n" + getPassword() + "\r\n");
+				printOutFile.printf(getWebsite() + "\n" + getUsername() + "\n" + encrypted + "\r\n");
 				printOutFile.close();
 			} catch (IOException ex) {
 				System.err.format("ERROR: " + ex);
