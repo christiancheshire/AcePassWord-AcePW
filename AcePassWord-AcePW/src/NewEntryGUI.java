@@ -12,6 +12,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import org.jasypt.util.text.StrongTextEncryptor;
+
 /*
  * Copyright 2020
  * 3 Musketeers Tech (Michael Arcangel, Caleb Cheshire, Christian Cheshire)
@@ -127,20 +129,27 @@ public class NewEntryGUI {
 		return submitButtonHit;
 	}
 	
-	Encryptor e = new Encryptor();
-	String encrypted;
+	public String encrypt(String toEncrypt) {
+		StrongTextEncryptor encryptor = new StrongTextEncryptor();
+		encryptor.setPassword("hans");
+		toEncrypt = encryptor.encrypt(toEncrypt);
+		return toEncrypt;
+	}
+	
+	//Encryptor e = new Encryptor();
+	//String encrypted = e.encrypt(getPassword());
 	/*
 	 * Encrypts the password that the user has entered. Uses encryptor class.
 	 */
-	public String encryptPassword() {
-		String encrypted = e.encrypt(getPassword());
-		return encrypted;
-	}
+	//public String encryptPassword() {
+		//String encrypted = e.encrypt(getPassword());
+		//return encrypted;
+	//}
 	
-	public String decryptPassword() {
-		String decrypted = e.decrypt(encrypted);
-		return decrypted;
-	}
+	//public String decryptPassword() {
+		//String decrypted = e.decrypt(encrypted);
+		//return decrypted;
+	//}
 	
 	
 
@@ -153,7 +162,7 @@ public class NewEntryGUI {
 				/* true for appending/add elements to existing file */
 				PrintWriter printOutFile = new PrintWriter(outFile);
 
-				printOutFile.printf(getWebsite() + "\n" + getUsername() + "\n" + getPassword() + "\r\n");
+				printOutFile.printf(getWebsite() + "\n" + getUsername() + "\n" + encrypt(getPassword()) + "\r\n");
 				printOutFile.close();
 			} catch (IOException ex) {
 				System.err.format("ERROR: " + ex);
@@ -164,7 +173,7 @@ public class NewEntryGUI {
 						"C:/Documents and Settings/" + nameOfUser + "/My Documents/AcePW Info.txt", true);
 				PrintWriter printOutFile = new PrintWriter(outFile);
 
-				printOutFile.printf(getWebsite() + "\n" + getUsername() + "\n" + encrypted + "\r\n");
+				printOutFile.printf(getWebsite() + "\n" + getUsername() + "\n" + getPassword() + "\r\n");
 				printOutFile.close();
 			} catch (IOException ex) {
 				System.err.format("ERROR: " + ex);
