@@ -99,12 +99,7 @@ public class AppGUI extends JFrame {
 			setBounds(0, 0, 600, 600);
 		}
 		
-		public String decrypt(String toDecrypt) {
-			StrongTextEncryptor encryptor = new StrongTextEncryptor();
-			encryptor.setPassword("hans");
-			toDecrypt = encryptor.decrypt(toDecrypt);
-			return toDecrypt;
-		}
+
 
 		public void setUpTable() {
 			String[] colTitles = { "Websites", "Usernames", "Passwords" };
@@ -143,6 +138,9 @@ public class AppGUI extends JFrame {
 			while (input.hasNextLine()) {
 				entry = input.nextLine();
 				System.out.println(entry);
+				if (col == 3) {
+					decrypt(entry);
+				}
 				if (col >= 3) {
 					col = 0;
 				}
@@ -159,6 +157,13 @@ public class AppGUI extends JFrame {
 			System.err.format("File not Found");
 		}
 		
+	}
+
+	public String decrypt(String toDecrypt) {
+		StrongTextEncryptor encryptor = new StrongTextEncryptor();
+		encryptor.setPassword("hans");
+		toDecrypt = encryptor.decrypt(toDecrypt);
+		return toDecrypt;
 	}
 
 	/*
