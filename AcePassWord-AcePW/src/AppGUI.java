@@ -14,6 +14,8 @@ import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 
+import org.jasypt.util.text.StrongTextEncryptor;
+
 /*
  * Copyright 2020
  * 3 Musketeers Tech (Michael Arcangel, Caleb Cheshire, Christian Cheshire)
@@ -95,6 +97,13 @@ public class AppGUI extends JFrame {
 
 			setUpTable();
 			setBounds(0, 0, 600, 600);
+		}
+		
+		public String decrypt(String toDecrypt) {
+			StrongTextEncryptor encryptor = new StrongTextEncryptor();
+			encryptor.setPassword("hans");
+			toDecrypt = encryptor.decrypt(toDecrypt);
+			return toDecrypt;
 		}
 
 		public void setUpTable() {
