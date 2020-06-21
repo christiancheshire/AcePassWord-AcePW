@@ -6,24 +6,23 @@ import org.jasypt.util.text.StrongTextEncryptor;
  * Encryptor class with imports from Jasypt 1.9.2
  */
 public class Encryptor {
+	StrongTextEncryptor encryptor = new StrongTextEncryptor();
 	/*
 	 * Encrypts the password to be saved in local data.
 	 */
 	public String encrypt(String password) {
 		String toEncrypt;
-		StrongTextEncryptor encryptor = new StrongTextEncryptor();
 		toEncrypt = encryptor.encrypt(password);
 		return toEncrypt;
 	}
 	
 	/*
-	 * Decrypts the password saved in local data, given the website for
-	 * that particular account.
+	 * Decrypts the password saved in local data, given the
+	 * encrypted text
 	 */
-	public String decrypt(String website) {
+	public String decrypt(String encryptedText) {
 		String toDecrypt;
-		StrongTextEncryptor decryptor = new StrongTextEncryptor();
-		toDecrypt = decryptor.decrypt(website);
+		toDecrypt = encryptor.decrypt(encryptedText);
 		return toDecrypt;
 	}
 }

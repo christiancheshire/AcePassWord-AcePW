@@ -128,12 +128,18 @@ public class NewEntryGUI {
 	}
 	
 	Encryptor e = new Encryptor();
+	String encrypted;
 	/*
 	 * Encrypts the password that the user has entered. Uses encryptor class.
 	 */
 	public String encryptPassword() {
 		String encrypted = e.encrypt(getPassword());
 		return encrypted;
+	}
+	
+	public String decryptPassword() {
+		String decrypted = e.decrypt(encrypted);
+		return decrypted;
 	}
 	
 	
