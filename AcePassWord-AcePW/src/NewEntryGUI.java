@@ -135,8 +135,6 @@ public class NewEntryGUI {
 		toEncrypt = encryptor.encrypt(toEncrypt);
 		return toEncrypt;
 	}
-	
-
 
 	public void writeNewEntryToFile() {
 		String operatingSystem = System.getProperty("os.name");
@@ -144,7 +142,7 @@ public class NewEntryGUI {
 			try {
 				FileWriter outFile = new FileWriter("C:/Users/" + nameOfUser + "/Documents/AcePW Info.txt",
 						true);
-				/* true for appending/add elements to existing file */
+				/* true for appending/adding elements to existing file */
 				PrintWriter printOutFile = new PrintWriter(outFile);
 
 				printOutFile.printf(getWebsite() + "\n" + getUsername() + "\n" + encrypt(getPassword()) + "\r\n");

@@ -137,10 +137,9 @@ public class AppGUI extends JFrame {
 
 			while (input.hasNextLine()) {
 				entry = input.nextLine();
+				//decrypt(entry);
 				System.out.println(entry);
-				if (col == 3) {
-					decrypt(entry);
-				}
+				
 				if (col >= 3) {
 					col = 0;
 				}
