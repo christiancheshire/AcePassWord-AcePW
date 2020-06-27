@@ -145,7 +145,7 @@ public class NewEntryGUI {
 				/* true for appending/adding elements to existing file */
 				PrintWriter printOutFile = new PrintWriter(outFile);
 
-				printOutFile.printf(getWebsite() + "\n" + getUsername() + "\n" + encrypt(getPassword()) + "\r\n");
+				printOutFile.printf(encrypt(getWebsite()) + "\n" + encrypt(getUsername()) + "\n" + encrypt(getPassword()) + "\r\n");
 				printOutFile.close();
 			} catch (IOException ex) {
 				System.err.format("ERROR: " + ex);

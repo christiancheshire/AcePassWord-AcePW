@@ -138,13 +138,13 @@ public class AppGUI extends JFrame {
 			e.setPassword("hans");
 			while (input.hasNextLine()) {
 				entry = input.nextLine();
-				e.decrypt(entry);
-				System.out.println(entry);
+				String result = e.decrypt(entry);
+				System.out.println(result);
 				
 				if (col >= 3) {
 					col = 0;
 				}
-				modelTable.setValueAt(entry, row, col);
+				modelTable.setValueAt(result, row, col);
 
 				if (col == 2) {
 					row++;
