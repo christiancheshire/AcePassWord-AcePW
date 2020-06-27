@@ -59,9 +59,9 @@ public class UserHelpGUI {
      * Method to set GUI text
      */
     private void initTextArea() {
-        this.textArea.setText("User Help\n\n"
-        		+ "AcePassWord is a password management application. "
-        		+ "For more information, visit https://github.com/christiancheshire/AcePassWord-AcePW. "
+        this.textArea.setText("AcePassWord is a desktop-based password management application which enables users to keep their login information secure. \n\n"
+        		+ "For more information, visit https://github.com/christiancheshire/AcePassWord-AcePW. \n\n"
+        		+ "To discover how to use AcePassWord, visit https://github.com/christiancheshire/AcePassWord-AcePW/wiki/User-Guide. \n\n"
         		+ "The developers of this application are: Michael Arcangel, Caleb Cheshire, and Christian Cheshire.");
         this.textArea.setFont(new Font("Comic Sans", Font.PLAIN, 15));
         this.textArea.setWrapStyleWord(true);
