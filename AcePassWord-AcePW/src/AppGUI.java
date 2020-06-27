@@ -121,6 +121,9 @@ public class AppGUI extends JFrame {
 		}
 	}
 
+	/*
+	 * Method to decrypt data and populate table
+	 */
 	public void populateTable() {
 		int row = 0;
 		int col = 0;
@@ -135,7 +138,8 @@ public class AppGUI extends JFrame {
 			@SuppressWarnings("resource")
 			Scanner input = new Scanner(filePath);
 			StrongTextEncryptor e = new StrongTextEncryptor();
-			e.setPassword("hans");
+			e.setPassword("hans"); 
+			
 			while (input.hasNextLine()) {
 				entry = input.nextLine();
 				String result = e.decrypt(entry);
@@ -157,13 +161,6 @@ public class AppGUI extends JFrame {
 			System.err.format("File not Found");
 		}
 		
-	}
-
-	public String decrypt(String toDecrypt) {
-		StrongTextEncryptor encryptor = new StrongTextEncryptor();
-		encryptor.setPassword("hans");
-		toDecrypt = encryptor.decrypt(toDecrypt);
-		return toDecrypt;
 	}
 
 	/*
