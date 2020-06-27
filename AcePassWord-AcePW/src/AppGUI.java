@@ -134,10 +134,11 @@ public class AppGUI extends JFrame {
 		try {
 			@SuppressWarnings("resource")
 			Scanner input = new Scanner(filePath);
-
+			StrongTextEncryptor e = new StrongTextEncryptor();
+			e.setPassword("hans");
 			while (input.hasNextLine()) {
 				entry = input.nextLine();
-				//decrypt(entry);
+				e.decrypt(entry);
 				System.out.println(entry);
 				
 				if (col >= 3) {
